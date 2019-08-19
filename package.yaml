@@ -36,6 +36,7 @@ dependencies:
 - SVGFonts
 - vass
 - pretty-simple 
+- duvet
 
 default-extensions:
 - RecordWildCards

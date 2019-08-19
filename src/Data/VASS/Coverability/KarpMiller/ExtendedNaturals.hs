@@ -25,10 +25,10 @@ instance Ord ExtConf where
     Configuration q a <= Configuration q' b = a <= b && q == q'
 
 instance {-# OVERLAPS #-} Show ExtConf where
-    show (Configuration q c) = concat
+    show (Configuration q c) = (concat :: [String] -> String)
         [ coerce q
         , ", <"
-        , concat $ intersperse "," $ DV.toList $ fmap show c
+        , ( concat $ intersperse "," $ DV.toList $ fmap show c )::String
         , ">"
         ]
 
