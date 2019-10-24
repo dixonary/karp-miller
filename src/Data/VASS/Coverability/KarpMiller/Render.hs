@@ -1,3 +1,9 @@
+{-| Tools for drawing the trees constructed by the Karp-Miller algorithm.
+
+    This will output SVG diagrams using the Diagrams package.
+
+    Note: You may find that, on large outputs, this takes a very, very long time!
+-}
 {-# LANGUAGE NoMonomorphismRestriction, FlexibleContexts #-}
 
 module Data.VASS.Coverability.KarpMiller.Render where
@@ -15,7 +21,6 @@ import qualified Data.Vector as Vector
 import Diagrams.Backend.SVG
 import Data.Function ((&))
 import Graphics.SVGFonts
-
 
 import Diagrams.TwoD.Layout.Tree
 
@@ -52,7 +57,10 @@ render path kmtree = renderSVG path size (scale sf diagram)
           --sf = 4
           sf = 1
 
+{-| Helper function for rendering the parts of the Karp-Miller trees into strings.
 
+    Nodes with no children (ie dead ends) are marked with a box.
+-}
 toCTree :: KarpMillerTree -> Tree String
 toCTree (Node a []) = Node (show a++" ■") []
 toCTree (Node a cs) = Node (show a) $ fmap toCTree cs

@@ -1,3 +1,10 @@
+{-| The Karp-Miller algorithm extends the idea of natural numbers with the
+    Omega symbol (roughly representing "infinity" or some number bigger than
+    all other natural numbers).
+    
+    We define here both the Extended Naturals (which we call Nat) and 
+    Extended Configurations, which are vectors of such numbers.
+-}
 module Data.VASS.Coverability.KarpMiller.ExtendedNaturals where
 
 import Data.Functor

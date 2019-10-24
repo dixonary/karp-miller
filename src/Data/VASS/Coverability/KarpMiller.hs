@@ -1,6 +1,8 @@
+{-| The standard Karp-Miller algorithm. This was originally implemented
+    as a portion of the Kosaraju reachability algorithm for Petri Nets.
+-}
 module Data.VASS.Coverability.KarpMiller (karpMiller, karpMillerTree) where
 
--- | Datatypes
 import qualified Data.Vector as Vector
 import Data.Vector (Vector)
 import qualified Data.Map as Map
@@ -18,7 +20,11 @@ import Data.VASS.Coverability.KarpMiller.ExtendedNaturals
 import Data.VASS.Coverability
 import Data.VASS
 
+{-| This is the standard entrypoint for the checker as used by Duvet and other
+    tools. You can evaluate it directly too if you want.
 
+    For more direct access to the underlying tree, see 'karpMillerTree'.
+-}
 karpMiller :: CovChecker
 karpMiller (CovProblem vass initial target) = 
     let

@@ -5,7 +5,9 @@ packages:
 
 extra-deps: 
 - sbv-8.2@sha256:bb17f85a58fbf67cc3fd9e897f7c4a625be80da342f8903ef17e97de7c9ac2ae
-- ../vass
-- ../duvet
+- git: https://github.com/dixonary/vass
+  commit: 21020e8246353f14042c4e8070a6af093e2aebf2
+- git: https://github.com/dixonary/duvet
+  commit: 1cb22f34ed52ed5f8ca6ce639696cdc7c4c4e1f0
 
 resolver: lts-13.27 # GHC 8.6.5a

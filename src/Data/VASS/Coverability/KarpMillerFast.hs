@@ -1,5 +1,12 @@
 {-# LANGUAGE DeriveFoldable, DeriveFunctor, DeriveTraversable, OverloadedLists #-}
 
+{-| This module is not exposed as it includes code which needs a rigorous
+    proof of correctness before publication. 
+    
+    I am fairly sure that it the pruning it does is correct. If you wish
+    to use the implementation please copy it into your own code.
+-}
+
 module Data.VASS.Coverability.KarpMillerFast where
 
 import Data.VASS
